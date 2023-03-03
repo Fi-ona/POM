@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using pom1.Models;
+using POM.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,25 +22,53 @@ namespace pom1.Controllers
         }
 
         // GET api/<LoginController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{phoneNumber}")]
+        public dynamic Get(long phoneNumber)
         {
-            return "value";
+            var user = _context.Users.Where(x => x.PhoneNumber == phoneNumber).FirstOrDefault();
+            if (user == null)   //new user
+            {
+                //Random randomString = new Random();
+                //string alphabet = "abcdefghijklmnopqrstuvwxyz";
+                //int length = 4, i = 0;
+                //string userReferenceCode = "";
+                //while(i < length)
+                //{
+                //    int a = randomString.Next(26);
+                //    userReferenceCode += alphabet.ElementAt(a);
+                //    i++;
+                //}
+
+                User newUser = new User()
+                {
+                    PhoneNumber = phoneNumber,
+                    CurrentLoginOtp = 123456
+                };
+
+                _context.Users.Add(newUser);
+                _context.SaveChanges();
+
+                PostLoginResponse postLoginResponse = new PostLoginResponse();
+                postLoginResponse.isOTPSent = true;
+                postLoginResponse.isNewUser = true;
+                return postLoginResponse;
+            }
+            else
+            {
+                return user;
+            }
         }
 
         // POST api/<LoginController>
         [HttpPost]
-        public bool Post([FromBody] int value)
+        public dynamic Post([FromBody] long phoneNumber, string otp)
         {
-            var result = false;
-            var user = _context.Users.Where(x => x.PhoneNumber == value).ToList();
-            if (user != null && user.Count > 0)
+            var user = _context.Users.Where(x => x.PhoneNumber == phoneNumber && x.CurrentLoginOtp == Convert.ToInt16(otp)).FirstOrDefault();
+            if (user != null)
             {
-                result = false;
-                return result;
+                return true;
             }
-            return result;
-
+            return false;
         }
 
 

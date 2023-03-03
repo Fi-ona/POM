@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\divya\\Desktop\\POM\\pom1\\POM.csproj": {}
+    "C:\\Users\\divya\\Desktop\\POM\\POM\\POM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\divya\\Desktop\\POM\\pom1\\POM.csproj": {
+    "C:\\Users\\divya\\Desktop\\POM\\POM\\POM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\divya\\Desktop\\POM\\pom1\\POM.csproj",
+        "projectUniqueName": "C:\\Users\\divya\\Desktop\\POM\\POM\\POM.csproj",
         "projectName": "POM",
-        "projectPath": "C:\\Users\\divya\\Desktop\\POM\\pom1\\POM.csproj",
+        "projectPath": "C:\\Users\\divya\\Desktop\\POM\\POM\\POM.csproj",
         "packagesPath": "C:\\Users\\divya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\divya\\Desktop\\POM\\pom1\\obj\\",
+        "outputPath": "C:\\Users\\divya\\Desktop\\POM\\POM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

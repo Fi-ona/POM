@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace pom1.Models;
+namespace POM.Models;
 
 public partial class Log
 {

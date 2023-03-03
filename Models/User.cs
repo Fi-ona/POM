@@ -1,36 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using pom1.Models;
 
-namespace pom1.Models;
+namespace POM.Models;
 
 public partial class User
 {
     public int UserId { get; set; }
 
-    public string FullName { get; set; } = null!;
+    public string? FullName { get; set; }
 
-    public int PhoneNumber { get; set; }
+    public long PhoneNumber { get; set; }
 
-    public string EmailId { get; set; } = null!;
+    public string? EmailId { get; set; }
 
     public int? AadharCardNumber { get; set; }
 
     public int? PancardNumber { get; set; }
 
-    public DateTime LastLoggedInDate { get; set; }
+    public DateTime? LastLoggedInDate { get; set; }
 
-    public int CurrentLoginOtp { get; set; }
+    public int? CurrentLoginOtp { get; set; }
 
-    public DateTime CreatedDate { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
-    public string UserReferenceCode { get; set; } = null!;
+    public string? UserReferenceCode { get; set; }
 
-    public decimal Balance { get; set; }
+    public decimal? Balance { get; set; }
 
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
-    public bool IsLoginBlocked { get; set; }
+    public bool? IsLoginBlocked { get; set; }
 
     public DateTime? Dob { get; set; }
 

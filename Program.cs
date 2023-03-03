@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using pom1.Models;
-using System.Configuration;
+using POM.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
